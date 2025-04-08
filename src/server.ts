@@ -8,3 +8,4 @@ console.log(curentTime);
 
 const person: string = "Muhammad";
 const count: number = 100;
+const number: number = 200;
