@@ -7,4 +7,4 @@ function unliHarfSoni(matn) {
   }
   
   
-  console.log(unliHarfSoni("Jonpulat"));
+  console.log(unliHarfSoni("Jonpulat"));       
