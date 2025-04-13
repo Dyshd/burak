@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import router from "./router";
+import routerAdmin from "./routerAdmin"
 /* 1-ENTRANCE */
 const app = express();
 console.log("__dirname:",__dirname) 
@@ -15,7 +16,9 @@ app.set('views', path.join(__dirname, "views"));
 app.set("view engine", "ejs")
 
 /* 4-ROUTERS */
-app.use("/", router) // Middleware Design Pettern
+// SSR: EJS 
+app.use("/admin", routerAdmin) //EJS 
+app.use("/", router) // Middleware Design Pettern , SPA: REACT
 export default app;
 
 
