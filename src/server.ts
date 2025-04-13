@@ -1,4 +1,5 @@
-import dotenv from "dotenv";
+import dotenv from "dotenv";         // (1) ModuleJS - Burak
+// const dotevn = require("doten")   // (2) CommonJS - Reja
 dotenv.config();
 
 import mongoose from 'mongoose';
@@ -13,3 +14,5 @@ mongoose.connect(process.env.MONGO_URL as string, {})
     });
 })
 .catch(err => console.log("ERROR on connection MongoDB",err));
+
+
