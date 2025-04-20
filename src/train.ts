@@ -29,7 +29,7 @@ console.log(teskari("Muhammadjon"))
     -Naming standards
      function, method, varible => CAMEL    goHome
      class => PASCAl                       MemberService
-     folder => KABAB                          
+     folder,file => KABAB                          
      css => SNAKE                          button_style
 
  - Error handling         
