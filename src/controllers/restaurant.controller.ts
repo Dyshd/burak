@@ -5,14 +5,16 @@ import MemberService from "../models/Member.service"
 const restaurantController: T = {};
 restaurantController.goHome = (req: Request, res: Response) => {
     try {
+        console.log("goHome")
         res.send("Home Page");
     } catch(err){
         console.log('Error, goHome:',err);
     }
 };
 
-restaurantController.goLogin = (req: Request, res: Response) => {
+restaurantController.getLogin = (req: Request, res: Response) => {
     try {
+        console.log("getLogin")
         res.send("Login Page");
     } catch(err){
         console.log('Error, getLogin:',err);
@@ -21,6 +23,7 @@ restaurantController.goLogin = (req: Request, res: Response) => {
 
 restaurantController.getSignup = (req: Request, res: Response) => {
     try {
+        console.log("getSignup")
         res.send("Signup Page");
     } catch(err){
         console.log('Error, getSignup:',err);
@@ -28,3 +31,6 @@ restaurantController.getSignup = (req: Request, res: Response) => {
 };
 
 export default restaurantController;
+
+//CLUSTER ,DB, COLLECTION ,DOCUMENT ,DATASET  -- bu narsalar Member.model.tsni
+//  ichida ishlatkan codlarimizni nomlanishi 1234

@@ -24,3 +24,14 @@ console.log(teskari("Muhammadjon"))
 // console.log(unliHarfSoni("Muhammadjon"));
 
 
+/* Project Standards
+    -Loging standards
+    -Naming standards
+     function, method, varible => CAMEL    goHome
+     class => PASCAl                       MemberService
+     folder => KABAB                          
+     css => SNAKE                          button_style
+
+ - Error handling         
+ 
+*/

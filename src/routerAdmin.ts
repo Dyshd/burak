@@ -4,7 +4,7 @@
 
  routerAdmin.get("/", restaurantController.goHome);
 
- routerAdmin.get("/login", restaurantController.goLogin);
+ routerAdmin.get("/login", restaurantController.getLogin);
 
  routerAdmin.get("/signup",restaurantController.getSignup);
 
