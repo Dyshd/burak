@@ -35,3 +35,9 @@ console.log(teskari("Muhammadjon"))
  - Error handling         
  
 */
+
+/* 
+    Traditional API
+    Rest API 
+    GraphQL API 
+*/
