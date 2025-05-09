@@ -41,3 +41,10 @@ console.log(teskari("Muhammadjon"))
     Rest API 
     GraphQL API 
 */
+
+
+/*
+    Traditional Frontend Development => SSR (ADMIN) => EJS
+    Modern Frontend Development => SPA (USERS) => REACT
+
+*/

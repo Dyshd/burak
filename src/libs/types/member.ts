@@ -14,7 +14,7 @@ export interface Member {
   memberPoints: number;
   createdAt: Date;
   updateAT: Date;
-        }
+}
 
 export interface MemberInput {
   memberType?: MemberType;

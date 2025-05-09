@@ -7,7 +7,6 @@ import { MORGAN_FORMAT } from "./libs/config";
 
 /* 1-ENTRANCE */
 const app = express();
-console.log("__dirname:",__dirname) 
 app.use(express.static(path.join(__dirname, "public"))); //Middle DP => public ochiqlayabdi
 app.use(express.urlencoded({extended: true}));  // MiddleWare DP => Traditional API 
 app.use(express.json()); //Middle DP => Rest API
@@ -21,7 +20,7 @@ app.set("view engine", "ejs")
 
 /* 4-ROUTERS */
 // SSR: EJS 
-app.use("/admin", routerAdmin   )// BSSR (EJS) 
+app.use("/admin", routerAdmin   )// SSR (EJS) 
 app.use("/", router) // Middleware Design Pettern , SPA: REACT
 export default app;
 
