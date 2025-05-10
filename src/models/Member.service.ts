@@ -92,4 +92,3 @@ export default MemberService;
 
 // function create(input: MemberInput) {
 //     throw new Error("Function not implemented.");
-// }
