@@ -120,6 +120,7 @@ restaurantController.verifyRestaurant = (
   res: Response,
   next: NextFunction
 ) => {
+  console.log("session")
   if (req.session?.member?.memberType === MemberType.RESTAURANT) {
     req.member = req.session.member;
     next();
