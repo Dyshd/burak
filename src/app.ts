@@ -21,7 +21,7 @@ app.use(express.urlencoded({extended: true}));  // MiddleWare DP => Traditional 
 app.use(express.json()); //Middle DP => Rest API
 app.use(morgan(MORGAN_FORMAT));
 /* 2-SESSIONS */
-/* 2-SESSIONS */
+
 app.use(
     session({
       secret: String(process.env.SESSION_SECRET),
