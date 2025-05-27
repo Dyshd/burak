@@ -1,7 +1,7 @@
 import MemberModel from "../schema/Member.model";
 import { LoginInput, Member, MemberInput } from "../libs/types/member";
 import Errors, { HttpCode, Message } from "../libs/Errors";
-import { MemberType } from "../libs/enums/member.enum";
+import { MemberStatus, MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs";
 
 class MemberService {
@@ -19,7 +19,7 @@ class MemberService {
     try {
       const result = await this.memberModel.create(input);
       result.memberPassword = "";
-      console.log("result",result)
+      console.log("result", result);
       return result.toJSON();
     } catch (err) {
       console.error("Error, model:signup", err);
@@ -27,7 +27,7 @@ class MemberService {
     }
   }
   public async login(input: LoginInput): Promise<Member> {
-    // TODO: Consider member status later 
+    // TODO: Consider member status later
     const member = await this.memberModel
       .findOne(
         { memberNick: input.memberNick },
@@ -86,6 +86,16 @@ class MemberService {
 
     return await this.memberModel.findById(member._id).exec();
   }
+
+  public async getUsers(): Promise<Member[]> {
+    const result = await this.memberModel
+      .find({ memberType: MemberType.USER })
+      .exec();
+
+      if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+      return result;
+   }
 }
 
 export default MemberService;
