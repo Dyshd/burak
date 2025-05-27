@@ -25,6 +25,14 @@ class ProductService {
     }
   }
 
+  public async getAllProducts(): Promise<Product[]> {
+    // string => objectid
+    const result = await this.productModel.find().exec();
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+    return result;
+  }
+
   public async updateChosenProduct(
     id: string,
     input: ProductUpdateInput
@@ -34,9 +42,9 @@ class ProductService {
     const result = await this.productModel
       .findOneAndUpdate({ _id: id }, input, { new: true })
       .exec();
-      if(!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
+    if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
-      return result;
+    return result;
   }
 }
 

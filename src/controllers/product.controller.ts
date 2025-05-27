@@ -15,7 +15,10 @@ const productController: T = {};
 productController.getAllProducts = async (req: Request, res: Response) => {
   try {
     console.log("getAllProducts");
-    res.render("products");
+    const data = await productService.getAllProducts();
+    console.log("data:", data);
+
+    res.render("products", {products: data});
   } catch (err) {
     console.log("Error,getAllProducts:", err);
     if (err instanceof Errors) res.status(err.code).json(err);
@@ -51,9 +54,9 @@ productController.createNewProduct = async (
     console.log("Error,createNewProduct:", err);
     const message =
       err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
-      res.send(
-        `<script> alert("${message}"); window.location.relace('admin/product/all') </script>`
-      );
+    res.send(
+      `<script> alert("${message}"); window.location.relace('admin/product/all') </script>`
+    );
   }
 };
 
@@ -62,7 +65,7 @@ productController.updateChosenProduct = async (req: Request, res: Response) => {
     console.log("updateChosenProduct");
     const id = req.params.id;
     const result = await productService.updateChosenProduct(id, req.body);
-    res.status(HttpCode.OK).json({data: result});
+    res.status(HttpCode.OK).json({ data: result });
   } catch (err) {
     console.log("Error,updateChosenProduct:", err);
     if (err instanceof Errors) res.status(err.code).json(err);
