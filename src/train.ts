@@ -37,7 +37,7 @@ console.log(teskari("Muhammadjon"))
 */
 
 /* 
-    Traditional API
+    Traditional API (form POST)
     Rest API 
     GraphQL API 
 */
