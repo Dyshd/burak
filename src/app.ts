@@ -19,7 +19,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, "public"))); //Middle DP => public ochiqlayabdi
 app.use(express.urlencoded({extended: true}));  // MiddleWare DP => Traditional API 
 app.use(express.json()); //Middle DP => Rest API
-app.use(morgan(MORGAN_FORMAT));
+app.use(morgan(MORGAN_FORMAT)); //Loglani formatini morgan formata 
 /* 2-SESSIONS */
 
 app.use(
